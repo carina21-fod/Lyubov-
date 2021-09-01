@@ -4,7 +4,7 @@
 int main()
 {
 	NaturalFraction fr;
-	fr.setNum(13);
-	fr.setDen(6);
-	printf("%d %d %d", fr.getNum(), fr.getDen(), fr.getIntegerPart());
+	fr.setNumerator(42);
+	fr.setDenominator(6);
+	printf("%d %d %d", fr.getNumerator(), fr.getDenominator(), fr.getIntegerPart());
 }
