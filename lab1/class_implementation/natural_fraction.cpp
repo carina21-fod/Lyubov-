@@ -36,24 +36,24 @@ void NaturalFraction::reduce()
 		}
 	}
 }
-void NaturalFraction:: operator+(const NaturalFraction& term)
+NaturalFraction NaturalFraction::operator+(const NaturalFraction& term)
 {
 	NaturalFraction result;
 	if (denominator == term.denominator)
 	{
-		result.setDenominator(term.denominator);                 //Случай, когда знаменатели равны - просто складываем числители (Можно убрать, будет работать корректно и с одним фрагментом из else)
+		result.setDenominator(term.denominator);                 
 		result.setNumerator(term.numerator + numerator);
 	}
 	else
 	{
-		result.setDenominator(term.denominator * denominator);                                 //Случай, когда знаменатели разные - приводим к общему  
+		result.setDenominator(term.denominator * denominator);                                  
 		result.setNumerator(numerator * term.denominator + term.numerator * denominator);
 	}     
 	result.reduce();
-    result.print();
+	return result;
 }
 
-void NaturalFraction:: operator+(int term)
+NaturalFraction NaturalFraction::operator+(int term)
 {
 	if (term == 0) {
 		print();
@@ -63,25 +63,24 @@ void NaturalFraction:: operator+(int term)
 	result.setDenominator(denominator);
 	result.setNumerator(numerator + term * denominator);
 	result.reduce();
-	result.print();
+	return result;
 }
 
-void NaturalFraction:: operator+=(const NaturalFraction& term)
+void NaturalFraction::operator+=(const NaturalFraction& term)
 {
 	if (denominator == term.denominator)
 	{
-		setNumerator(term.numerator + numerator);        // Случай, когда знаменатели равны - просто складываем числители (Можно убрать, будет работать корректно и с одним фрагментом из else)
+		setNumerator(term.numerator + numerator);       
 	}
 	else
 	{
-		setDenominator(term.denominator * denominator);                               //Случай, когда знаменатели разные - приводим к общему  
+		setDenominator(term.denominator * denominator);                               
 		setNumerator(numerator * term.denominator + term.numerator * denominator);
 	}
 	reduce();
-	print();
 }
 
-void NaturalFraction:: operator+=(int term)
+void NaturalFraction::operator+=(int term)
 {
 	if (term == 0) {
 		print();
@@ -89,10 +88,9 @@ void NaturalFraction:: operator+=(int term)
 	}
 	setNumerator(numerator + term * denominator);
 	reduce();
-	print();
 }
 
-void NaturalFraction:: operator-(int term)
+NaturalFraction NaturalFraction::operator-(int term)
 {
 	if (term == 0) {
 		print();
@@ -102,10 +100,10 @@ void NaturalFraction:: operator-(int term)
 	result.setDenominator(denominator);
 	result.setNumerator(numerator - term * denominator);
 	result.reduce();
-	result.print();
+	return result;
 }
 
-void NaturalFraction:: operator-=(int term)
+void NaturalFraction::operator-=(int term)
 {
 	if (term == 0) {
 		print();
@@ -113,5 +111,4 @@ void NaturalFraction:: operator-=(int term)
 	}
 	setNumerator(numerator - term * denominator);
 	reduce();
-	print();
 }
