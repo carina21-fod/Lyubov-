@@ -1,10 +1,11 @@
 #include <iostream>
 #include "natural_fraction.h"
 
+using namespace std;
+
 int main()
 {
-	NaturalFraction fr;
-	fr.setNumerator(42);
-	fr.setDenominator(6);
-	printf("%d %d %d", fr.getNumerator(), fr.getDenominator(), fr.getIntegerPart());
+	NaturalFraction fr1;
+	cin >> fr1;
+	cout << fr1;
 }
