@@ -1,4 +1,7 @@
 #include "natural_fraction.h"
+#include <iostream>
+
+using namespace std;
 
 int NaturalFraction::getNumerator() { return numerator; }
 int NaturalFraction::getDenominator() { return denominator; }
@@ -15,6 +18,11 @@ void NaturalFraction::setDenominator(int newDen)
 	reduce();
 }
 int NaturalFraction::getIntegerPart() { return numerator / denominator; }
+void NaturalFraction::print()
+{
+if (denominator == 1)  cout << numerator << endl; 
+else cout << numerator << "/" << denominator << endl; 
+}
 void NaturalFraction::reduce() 
 { 
 	if (!numeratorSet || !denominatorSet) return;
@@ -27,4 +35,80 @@ void NaturalFraction::reduce()
 			denominator /= currdivisor;
 		}
 	}
+}
+NaturalFraction NaturalFraction::operator+(const NaturalFraction& term)
+{
+	NaturalFraction result;
+	if (denominator == term.denominator)
+	{
+		result.setDenominator(term.denominator);                 
+		result.setNumerator(term.numerator + numerator);
+	}
+	else
+	{
+		result.setDenominator(term.denominator * denominator);                                  
+		result.setNumerator(numerator * term.denominator + term.numerator * denominator);
+	}     
+	result.reduce();
+	return result;
+}
+
+NaturalFraction NaturalFraction::operator+(int term)
+{
+	if (term == 0) {
+		print();
+		return;
+	}
+	NaturalFraction result;
+	result.setDenominator(denominator);
+	result.setNumerator(numerator + term * denominator);
+	result.reduce();
+	return result;
+}
+
+void NaturalFraction::operator+=(const NaturalFraction& term)
+{
+	if (denominator == term.denominator)
+	{
+		setNumerator(term.numerator + numerator);       
+	}
+	else
+	{
+		setDenominator(term.denominator * denominator);                               
+		setNumerator(numerator * term.denominator + term.numerator * denominator);
+	}
+	reduce();
+}
+
+void NaturalFraction::operator+=(int term)
+{
+	if (term == 0) {
+		print();
+		return;
+	}
+	setNumerator(numerator + term * denominator);
+	reduce();
+}
+
+NaturalFraction NaturalFraction::operator-(int term)
+{
+	if (term == 0) {
+		print();
+		return;
+	}
+	NaturalFraction result;
+	result.setDenominator(denominator);
+	result.setNumerator(numerator - term * denominator);
+	result.reduce();
+	return result;
+}
+
+void NaturalFraction::operator-=(int term)
+{
+	if (term == 0) {
+		print();
+		return;
+	}
+	setNumerator(numerator - term * denominator);
+	reduce();
 }
