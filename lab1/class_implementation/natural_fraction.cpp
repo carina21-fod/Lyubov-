@@ -126,3 +126,69 @@ ostream& operator<<(ostream& output, NaturalFraction& fr)
 	return output;
 }
 
+void tests()
+{
+	int testsPassed = 0;
+
+	printTestResult(test1(), &testsPassed);
+	printTestResult(test2(), &testsPassed);
+
+	printTestResult(test3_5(new NaturalFraction(3,5), 0), &testsPassed);
+	printTestResult(test3_5(new NaturalFraction(13,6), 2), &testsPassed);
+	printTestResult(test3_5(new NaturalFraction(73,15), 4), &testsPassed);
+
+	printTestResult(test6_10(new NaturalFraction(6,8), 3, 4), &testsPassed);
+	printTestResult(test6_10(new NaturalFraction(30,15), 2, 1), &testsPassed);
+	printTestResult(test6_10(new NaturalFraction(8,40), 1, 5), &testsPassed);
+	printTestResult(test6_10(new NaturalFraction(100,1), 100, 1), &testsPassed);
+	printTestResult(test6_10(new NaturalFraction(10395,46080), 231, 1024), &testsPassed);
+
+	printTestResult(test11_15(new NaturalFraction(1,2), 1/2.0), &testsPassed);
+	printTestResult(test11_15(new NaturalFraction(4,5), 4/5.0), &testsPassed);
+	printTestResult(test11_15(new NaturalFraction(18,7), 18/7.0), &testsPassed);
+	printTestResult(test11_15(new NaturalFraction(1563,124), 1563/124.0), &testsPassed);
+	printTestResult(test11_15(new NaturalFraction(52137,389257), 52137/389257.0), &testsPassed);
+}
+
+void printTestResult(bool result, int* counter)
+{
+	if (result)
+	{
+		printf("test passed\n");
+		(*counter)++;
+	}
+	else printf("TEST FAILED\n");
+}
+
+bool test1()
+{
+	NaturalFraction fr(3, 5);
+	printf("Expected: 3, Got: %d; ", fr.getNumerator());
+	if (fr.getNumerator() == 3) return true;
+	else return false;
+}
+bool test2()
+{
+	NaturalFraction fr(5, 8);
+	printf("Expected: 8, Got: %d; ", fr.getDenominator());
+	if (fr.getDenominator() == 8) return true;
+	else return false;
+}
+bool test3_5(NaturalFraction* fr, int expected)
+{
+	printf("Expected: %d, Got: %d; ", expected, fr->getIntegerPart());
+	if (fr->getIntegerPart() == expected) return true;
+	else return false;
+}
+bool test6_10(NaturalFraction* fr, int expectedNum, int expectedDen)
+{
+	printf("Expected: %d/%d, Got: %d/%d; ", expectedNum, expectedDen, fr->getNumerator(), fr->getDenominator());
+	if (fr->getNumerator() == expectedNum && fr->getDenominator() == expectedDen) return true;
+	else return false;
+}
+bool test11_15(NaturalFraction* fr, double expected)
+{
+	printf("Expected: %lf, Got: %lf; ", expected, fr->toDouble());
+	if (expected == fr->toDouble()) return true;
+	else return false;
+}
