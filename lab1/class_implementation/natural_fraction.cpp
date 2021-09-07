@@ -18,11 +18,6 @@ void NaturalFraction::setDenominator(int newDen)
 	reduce();
 }
 int NaturalFraction::getIntegerPart() { return numerator / denominator; }
-void NaturalFraction::print()
-{
-	if (denominator == 1)  cout << numerator << endl; 
-	else cout << numerator << "/" << denominator << endl; 
-}
 void NaturalFraction::reduce() 
 { 
 	if (!numeratorSet || !denominatorSet) return;

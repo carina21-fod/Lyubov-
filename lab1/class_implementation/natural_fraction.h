@@ -14,7 +14,6 @@ public:
 	void setNumerator(int newNum);
 	void setDenominator(int newDen);
 	int getIntegerPart();
-	void print();
 	double toDouble();
 
 	NaturalFraction operator+(const NaturalFraction& term);
