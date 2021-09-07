@@ -10,6 +10,7 @@ private:
 	void reduce();
 public:
 	NaturalFraction();
+	NaturalFraction(int num, int den);
 	NaturalFraction(NaturalFraction& currFraction);
 
 	int getNumerator();
@@ -40,32 +41,12 @@ void tests();
 
 bool test1(); // test 1: testing the ability to take the numerator of a fraction
 bool test2(); // test 2: testing the ability to take the denominator of a fraction
-bool test3(); // tests 3-5: testing the ability to take the integer part of a fraction
-bool test4();
-bool test5();
-bool test6(); // tests 6-10: testing the ability to reduce a fraction
-bool test7();
-bool test8();
-bool test9();
-bool test10();
-bool test11(); // tests 11-15: testing the ability to convert a fraction to double
-bool test12();
-bool test13();
-bool test14();
-bool test15();
-bool test16(); // tests 16-20: testing the ability to copy a fraction
-bool test17();
-bool test18();
-bool test19();
-bool test20();
-bool test21(); // tests 21-24: testing the ability to check if two fractions are equal
-bool test22();
-bool test23();
-bool test24(); 
-bool test25(); // tests 25-28: testing the ability to check if two fractions are not equal
-bool test26();
-bool test27();
-bool test28();
+bool test3_5(); // tests 3-5: testing the ability to take the integer part of a fraction
+bool test6_10(); // tests 6-10: testing the ability to reduce a fraction
+bool test11_15(); // tests 11-15: testing the ability to convert a fraction to double
+bool test16_20(); // tests 16-20: testing the ability to copy a fraction
+bool test21_24(); // tests 21-24: testing the ability to check if two fractions are equal 
+bool test25_28(); // tests 25-28: testing the ability to check if two fractions are not equal
 bool test29(); // tests 29-33: testing the ability to add two fractions (+)
 bool test30();
 bool test31();

@@ -8,6 +8,11 @@ NaturalFraction::NaturalFraction()
 	setNumerator(1);
 	setDenominator(1);
 }
+NaturalFraction::NaturalFraction(int num, int den)
+{
+	setNumerator(num);
+	setDenominator(den);
+}
 NaturalFraction::NaturalFraction(NaturalFraction& currFraction)
 {
 	numerator = currFraction.numerator;
@@ -120,3 +125,4 @@ ostream& operator<<(ostream& output, NaturalFraction& fr)
 	output << fr.numerator << "/" << fr.denominator;
 	return output;
 }
+
