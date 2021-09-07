@@ -73,8 +73,8 @@ NaturalFraction NaturalFraction::operator-(int term)
 NaturalFraction NaturalFraction::operator/(int term)
 {
 	NaturalFraction result;
-	result.setNumerator(numerator / term);
-	result.setDenominator(denominator);
+	result.setNumerator(numerator);
+	result.setDenominator(denominator * term);
 	return result;
 }
 
@@ -95,7 +95,7 @@ void NaturalFraction::operator-=(int term)
 }
 void NaturalFraction::operator/=(int term)
 {
-	numerator /= term;
+	denominator *= term;
 }
 
 bool NaturalFraction::operator==(const NaturalFraction& term)
