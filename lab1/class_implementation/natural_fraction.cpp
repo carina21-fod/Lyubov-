@@ -3,6 +3,17 @@
 
 using namespace std;
 
+NaturalFraction::NaturalFraction()
+{
+	setNumerator(1);
+	setDenominator(1);
+}
+NaturalFraction::NaturalFraction(NaturalFraction& currFraction)
+{
+	numerator = currFraction.numerator;
+	denominator = currFraction.denominator;
+}
+
 int NaturalFraction::getNumerator() { return numerator; }
 int NaturalFraction::getDenominator() { return denominator; }
 void NaturalFraction::setNumerator(int newNum) 
