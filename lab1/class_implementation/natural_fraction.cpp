@@ -145,8 +145,8 @@ void tests()
 	printTestResult(test6_10(new NaturalFraction(6,8), 3, 4), &testsPassed);
 	printTestResult(test6_10(new NaturalFraction(30,15), 2, 1), &testsPassed);
 	printTestResult(test6_10(new NaturalFraction(8,40), 1, 5), &testsPassed);
-	printTestResult(test6_10(new NaturalFraction(100,1), 100, 1), &testsPassed);
 	printTestResult(test6_10(new NaturalFraction(10395,46080), 231, 1024), &testsPassed);
+	printTestResult(test6_10(new NaturalFraction(3628800, 6302920), 90720, 157573), &testsPassed);
 
 	printf("\n----converting a fraction to double----\n\n");
 	printTestResult(test11_15(new NaturalFraction(1,2), 1/2.0), &testsPassed);
@@ -173,6 +173,13 @@ void tests()
 	printTestResult(test25_28(new NaturalFraction(10,3), new NaturalFraction(11,3), true), &testsPassed);
 	printTestResult(test25_28(new NaturalFraction(8041,1023), new NaturalFraction(8041,1023), false), &testsPassed);
 	printTestResult(test25_28(new NaturalFraction(135087,491208), new NaturalFraction(135087,491207), true), &testsPassed);
+
+	printf("\n----adding two fractions (+)----\n\n");
+	printTestResult(test29_33(new NaturalFraction(1,3), new NaturalFraction(1,3), new NaturalFraction(2,3)), &testsPassed);
+	printTestResult(test29_33(new NaturalFraction(5,8), new NaturalFraction(4,2), new NaturalFraction(21,8)), &testsPassed);
+	printTestResult(test29_33(new NaturalFraction(12,11), new NaturalFraction(8,31), new NaturalFraction(460,341)), &testsPassed);
+	printTestResult(test29_33(new NaturalFraction(29,100), new NaturalFraction(90,17), new NaturalFraction(9493,1700)), &testsPassed);
+	printTestResult(test29_33(new NaturalFraction(37821,1274), new NaturalFraction(6437,5178), new NaturalFraction(7287067,235599)), &testsPassed);
 }
 
 void printTestResult(bool result, int* counter)
@@ -276,5 +283,13 @@ bool test25_28(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
 	}
 	printf("Expected: %s, Got: %s; ", expect, got);
 	if ((*fr1 != *fr2) == expected) return true;
+	else return false;
+}
+bool test29_33(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+{
+	NaturalFraction result;
+	result = *fr1 + *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (result.getNumerator() == expected->getNumerator() && result.getDenominator() == expected->getDenominator()) return true;
 	else return false;
 }

@@ -40,67 +40,27 @@ public:
 void tests();
 void printTestResult(bool result, int* counter);
 
-bool test1(); // test 1: testing the ability to take the numerator of a fraction
-bool test2(); // test 2: testing the ability to take the denominator of a fraction
-bool test3_5(NaturalFraction* fr, int expected); // tests 3-5: testing the ability to take the integer part of a fraction
-bool test6_10(NaturalFraction* fr, int expectedNum, int expectedDen); // tests 6-10: testing the ability to reduce a fraction
-bool test11_15(NaturalFraction* fr, double expected); // tests 11-15: testing the ability to convert a fraction to double
-bool test16_20(NaturalFraction* fr, int expectedNum, int expectedDen); // tests 16-20: testing the ability to copy a fraction
-bool test21_24(NaturalFraction* fr1, NaturalFraction* fr2, bool expected); // tests 21-24: testing the ability to check if two fractions are equal 
-bool test25_28(NaturalFraction* fr1, NaturalFraction* fr2, bool expected); // tests 25-28: testing the ability to check if two fractions are not equal
-bool test29(); // tests 29-33: testing the ability to add two fractions (+)
-bool test30();
-bool test31();
-bool test32();
-bool test33();
-bool test34(); // tests 34-38: testing the ability to add two fractions (+=)
-bool test35();
-bool test36();
-bool test37();
-bool test38();
-bool test39(); // tests 39-41: testing the ability to add a number to a fraction (+)
-bool test40();
-bool test41();
-bool test42(); // tests 42-44: testing the ability to add a number to a fraction (+=)
-bool test43();
-bool test44();
-bool test45(); // tests 45-49: testing the ability to subtract a fraction from a fraction (-)
-bool test46();
-bool test47();
-bool test48();
-bool test49();
-bool test50(); // tests 50-54: testing the ability to subtract a fraction from a fraction (-=)
-bool test51();
-bool test52();
-bool test53();
-bool test54();
-bool test55(); // tests 55-57: testing the ability to subtract a number from a fraction (-)
-bool test56();
-bool test57();
-bool test58(); // tests 58-60: testing the ability to subtract a number from a fraction (-=)
-bool test59();
-bool test60();
-bool test61(); // tests 61-63: testing the ability to multiply two fractions (*)
-bool test62();
-bool test63();
-bool test64(); // tests 64-66: testing the ability to multiply two fractions (*=)
-bool test65();
-bool test66();
-bool test67(); // tests 67-69 (nice): testing the ability to multiply a fraction by a number (*)
-bool test68();
-bool test69();
-bool test70(); // tests 70-72: testing the ability to multiply a fraction by a number (*=)
-bool test71();
-bool test72();
-bool test73(); // tests 73-75: testing the ability to divide a fraction by a fraction (/)
-bool test74();
-bool test75();
-bool test76(); // tests 76-78: testing the ability to divide a fraction by a fraction (/=)
-bool test77();
-bool test78();
-bool test79(); // tests 79-81: testing the ability to divide a fraction by a number (/)
-bool test80();
-bool test81();
-bool test82(); // tests 82-84: testing the ability to divide a fraction by a number (/=)
-bool test83();
-bool test84();
+bool test1();																						// test 1: testing the ability to take the numerator of a fraction
+bool test2();																						// test 2: testing the ability to take the denominator of a fraction
+bool test3_5(NaturalFraction* fr, int expected);													// tests 3-5: testing the ability to take the integer part of a fraction
+bool test6_10(NaturalFraction* fr, int expectedNum, int expectedDen);								// tests 6-10: testing the ability to reduce a fraction
+bool test11_15(NaturalFraction* fr, double expected);												// tests 11-15: testing the ability to convert a fraction to double
+bool test16_20(NaturalFraction* fr, int expectedNum, int expectedDen);								// tests 16-20: testing the ability to copy a fraction
+bool test21_24(NaturalFraction* fr1, NaturalFraction* fr2, bool expected);							// tests 21-24: testing the ability to check if two fractions are equal 
+bool test25_28(NaturalFraction* fr1, NaturalFraction* fr2, bool expected);							// tests 25-28: testing the ability to check if two fractions are not equal
+bool test29_33(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected);				// tests 29-33: testing the ability to add two fractions (+)
+bool test34_38();																					// tests 34-38: testing the ability to add two fractions (+=)
+bool test39_42();																					// tests 39-41: testing the ability to add a number to a fraction (+)
+bool test42_45();																					// tests 42-44: testing the ability to add a number to a fraction (+=)
+bool test45_49();																					// tests 45-49: testing the ability to subtract a fraction from a fraction (-)
+bool test50_54();																					// tests 50-54: testing the ability to subtract a fraction from a fraction (-=)
+bool test55_57();																					// tests 55-57: testing the ability to subtract a number from a fraction (-)
+bool test58_60();																					// tests 58-60: testing the ability to subtract a number from a fraction (-=)
+bool test61_63();																					// tests 61-63: testing the ability to multiply two fractions (*)
+bool test64_66();																					// tests 64-66: testing the ability to multiply two fractions (*=)
+bool test67_69();																					// tests 67-69 (nice): testing the ability to multiply a fraction by a number (*)
+bool test70_72();																					// tests 70-72: testing the ability to multiply a fraction by a number (*=)
+bool test73_75();																					// tests 73-75: testing the ability to divide a fraction by a fraction (/)
+bool test76_78();																					// tests 76-78: testing the ability to divide a fraction by a fraction (/=)
+bool test79_81();																					// tests 79-81: testing the ability to divide a fraction by a number (/)
+bool test82_84();																					// tests 82-84: testing the ability to divide a fraction by a number (/=)
