@@ -148,6 +148,12 @@ void tests()
 	printTestResult(test11_15(new NaturalFraction(18,7), 18/7.0), &testsPassed);
 	printTestResult(test11_15(new NaturalFraction(1563,124), 1563/124.0), &testsPassed);
 	printTestResult(test11_15(new NaturalFraction(52137,389257), 52137/389257.0), &testsPassed);
+
+	printTestResult(test16_20(new NaturalFraction(3,5), 3, 5), &testsPassed);
+	printTestResult(test16_20(new NaturalFraction(5,8), 5, 8), &testsPassed);
+	printTestResult(test16_20(new NaturalFraction(15,7), 15, 7), &testsPassed);
+	printTestResult(test16_20(new NaturalFraction(346,21), 346, 21), &testsPassed);
+	printTestResult(test16_20(new NaturalFraction(1,2351), 1, 2351), &testsPassed);
 }
 
 void printTestResult(bool result, int* counter)
@@ -190,5 +196,12 @@ bool test11_15(NaturalFraction* fr, double expected)
 {
 	printf("Expected: %lf, Got: %lf; ", expected, fr->toDouble());
 	if (expected == fr->toDouble()) return true;
+	else return false;
+}
+bool test16_20(NaturalFraction* fr, int expectedNum, int expectedDen)
+{
+	NaturalFraction result = *fr;
+	printf("Expected: %d/%d, Got: %d/%d; ", fr->getNumerator(), fr->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (result.getNumerator() == expectedNum && result.getDenominator() == expectedDen) return true;
 	else return false;
 }
