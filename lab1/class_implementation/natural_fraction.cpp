@@ -167,6 +167,12 @@ void tests()
 	printTestResult(test21_24(new NaturalFraction(10,13), new NaturalFraction(11,13), false), &testsPassed);
 	printTestResult(test21_24(new NaturalFraction(101,21), new NaturalFraction(101,21), true), &testsPassed);
 	printTestResult(test21_24(new NaturalFraction(461309,12498), new NaturalFraction(461309,12499), false), &testsPassed);
+
+	printf("\n----checking if two fractions are not equal----\n\n");
+	printTestResult(test25_28(new NaturalFraction(5,8), new NaturalFraction(5,8), false), &testsPassed);
+	printTestResult(test25_28(new NaturalFraction(10,3), new NaturalFraction(11,3), true), &testsPassed);
+	printTestResult(test25_28(new NaturalFraction(8041,1023), new NaturalFraction(8041,1023), false), &testsPassed);
+	printTestResult(test25_28(new NaturalFraction(135087,491208), new NaturalFraction(135087,491207), true), &testsPassed);
 }
 
 void printTestResult(bool result, int* counter)
@@ -243,5 +249,32 @@ bool test21_24(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
 	}
 	printf("Expected: %s, Got: %s; ", expect, got);
 	if ((*fr1 == *fr2) == expected) return true;
+	else return false;
+}
+bool test25_28(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr1 != *fr2)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr1 != *fr2) == expected) return true;
 	else return false;
 }
