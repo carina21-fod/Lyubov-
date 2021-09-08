@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include "natural_fraction.h"
 #include <iostream>
 
@@ -130,30 +132,41 @@ void tests()
 {
 	int testsPassed = 0;
 
+	printf("\n----taking the numerator and the denominator----\n\n");
 	printTestResult(test1(), &testsPassed);
 	printTestResult(test2(), &testsPassed);
 
+	printf("\n----taking the integer part----\n\n");
 	printTestResult(test3_5(new NaturalFraction(3,5), 0), &testsPassed);
 	printTestResult(test3_5(new NaturalFraction(13,6), 2), &testsPassed);
 	printTestResult(test3_5(new NaturalFraction(73,15), 4), &testsPassed);
 
+	printf("\n----reducing a fraction----\n\n");
 	printTestResult(test6_10(new NaturalFraction(6,8), 3, 4), &testsPassed);
 	printTestResult(test6_10(new NaturalFraction(30,15), 2, 1), &testsPassed);
 	printTestResult(test6_10(new NaturalFraction(8,40), 1, 5), &testsPassed);
 	printTestResult(test6_10(new NaturalFraction(100,1), 100, 1), &testsPassed);
 	printTestResult(test6_10(new NaturalFraction(10395,46080), 231, 1024), &testsPassed);
 
+	printf("\n----converting a fraction to double----\n\n");
 	printTestResult(test11_15(new NaturalFraction(1,2), 1/2.0), &testsPassed);
 	printTestResult(test11_15(new NaturalFraction(4,5), 4/5.0), &testsPassed);
 	printTestResult(test11_15(new NaturalFraction(18,7), 18/7.0), &testsPassed);
 	printTestResult(test11_15(new NaturalFraction(1563,124), 1563/124.0), &testsPassed);
 	printTestResult(test11_15(new NaturalFraction(52137,389257), 52137/389257.0), &testsPassed);
 
+	printf("\n----copying a fraction----\n\n");
 	printTestResult(test16_20(new NaturalFraction(3,5), 3, 5), &testsPassed);
 	printTestResult(test16_20(new NaturalFraction(5,8), 5, 8), &testsPassed);
 	printTestResult(test16_20(new NaturalFraction(15,7), 15, 7), &testsPassed);
 	printTestResult(test16_20(new NaturalFraction(346,21), 346, 21), &testsPassed);
 	printTestResult(test16_20(new NaturalFraction(1,2351), 1, 2351), &testsPassed);
+
+	printf("\n----checking if two fractions are equal----\n\n");
+	printTestResult(test21_24(new NaturalFraction(2,3), new NaturalFraction(2,3), true), &testsPassed);
+	printTestResult(test21_24(new NaturalFraction(10,13), new NaturalFraction(11,13), false), &testsPassed);
+	printTestResult(test21_24(new NaturalFraction(101,21), new NaturalFraction(101,21), true), &testsPassed);
+	printTestResult(test21_24(new NaturalFraction(461309,12498), new NaturalFraction(461309,12499), false), &testsPassed);
 }
 
 void printTestResult(bool result, int* counter)
@@ -203,5 +216,32 @@ bool test16_20(NaturalFraction* fr, int expectedNum, int expectedDen)
 	NaturalFraction result = *fr;
 	printf("Expected: %d/%d, Got: %d/%d; ", fr->getNumerator(), fr->getDenominator(), result.getNumerator(), result.getDenominator());
 	if (result.getNumerator() == expectedNum && result.getDenominator() == expectedDen) return true;
+	else return false;
+}
+bool test21_24(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr1 == *fr2)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr1 == *fr2) == expected) return true;
 	else return false;
 }

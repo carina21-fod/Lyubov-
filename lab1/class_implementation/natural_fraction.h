@@ -46,7 +46,7 @@ bool test3_5(NaturalFraction* fr, int expected); // tests 3-5: testing the abili
 bool test6_10(NaturalFraction* fr, int expectedNum, int expectedDen); // tests 6-10: testing the ability to reduce a fraction
 bool test11_15(NaturalFraction* fr, double expected); // tests 11-15: testing the ability to convert a fraction to double
 bool test16_20(NaturalFraction* fr, int expectedNum, int expectedDen); // tests 16-20: testing the ability to copy a fraction
-bool test21_24(); // tests 21-24: testing the ability to check if two fractions are equal 
+bool test21_24(NaturalFraction* fr1, NaturalFraction* fr2, bool expected); // tests 21-24: testing the ability to check if two fractions are equal 
 bool test25_28(); // tests 25-28: testing the ability to check if two fractions are not equal
 bool test29(); // tests 29-33: testing the ability to add two fractions (+)
 bool test30();
