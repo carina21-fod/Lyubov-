@@ -231,6 +231,16 @@ void tests()
 	printTestResult(test64_66(new NaturalFraction(2,5), new NaturalFraction(14,3), new NaturalFraction(28,15)), &testsPassed);
 	printTestResult(test64_66(new NaturalFraction(29,5), new NaturalFraction(12,11), new NaturalFraction(348,55)), &testsPassed);
 	printTestResult(test64_66(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);*/
+
+	/*printf("\n----multiplying a fracton by a number (*)----\n\n");
+	printTestResult(test67_69(new NaturalFraction(2,3), 4, new NaturalFraction(8,3)), &testsPassed);
+	printTestResult(test67_69(new NaturalFraction(10,7), 7, new NaturalFraction(10,1)), &testsPassed);
+	printTestResult(test67_69(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);*/
+
+	/*printf("\n----multiplying a fracton by a number (*=)----\n\n");
+	printTestResult(test70_72(new NaturalFraction(2,3), 4, new NaturalFraction(8,3)), &testsPassed);
+	printTestResult(test70_72(new NaturalFraction(10,7), 7, new NaturalFraction(10,1)), &testsPassed);
+	printTestResult(test70_72(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);*/
 }
 
 void printTestResult(bool result, int* counter)
@@ -407,7 +417,22 @@ bool test58_60(NaturalFraction* fr, int term, NaturalFraction* expected)
 /*bool test64_66(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
 {
 	*fr1 *= *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
+	if (*fr1 == *expected) return true;
+	else return false;
+}*/
+/*bool test67_69(NaturalFraction* fr1, int term, NaturalFraction* expected)
+{
+	NaturalFraction result;
+	result = *fr1 * term
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (result == *expected) return true;
+	else return false;
+}*/
+/*bool test70_72(NaturalFraction* fr1, int term, NaturalFraction* expected)
+{
+	*fr1 *= term;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
 	if (*fr1 == *expected) return true;
 	else return false;
 }*/
