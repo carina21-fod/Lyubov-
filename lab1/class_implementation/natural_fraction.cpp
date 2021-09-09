@@ -180,6 +180,13 @@ void tests()
 	printTestResult(test29_33(new NaturalFraction(12,11), new NaturalFraction(8,31), new NaturalFraction(460,341)), &testsPassed);
 	printTestResult(test29_33(new NaturalFraction(29,100), new NaturalFraction(90,17), new NaturalFraction(9493,1700)), &testsPassed);
 	printTestResult(test29_33(new NaturalFraction(37821,1274), new NaturalFraction(6437,5178), new NaturalFraction(7287067,235599)), &testsPassed);
+
+	/*printf("\n----adding two fractions (+=)----\n\n");
+	printTestResult(test34_38(new NaturalFraction(1, 3), new NaturalFraction(1, 3), new NaturalFraction(2, 3)), &testsPassed);
+	printTestResult(test34_38(new NaturalFraction(5, 8), new NaturalFraction(4, 2), new NaturalFraction(21, 8)), &testsPassed);
+	printTestResult(test34_38(new NaturalFraction(12, 11), new NaturalFraction(8, 31), new NaturalFraction(460, 341)), &testsPassed);
+	printTestResult(test34_38(new NaturalFraction(29, 100), new NaturalFraction(90, 17), new NaturalFraction(9493, 1700)), &testsPassed);
+	printTestResult(test34_38(new NaturalFraction(37821, 1274), new NaturalFraction(6437, 5178), new NaturalFraction(7287067, 235599)), &testsPassed);*/
 }
 
 void printTestResult(bool result, int* counter)
@@ -290,6 +297,13 @@ bool test29_33(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expe
 	NaturalFraction result;
 	result = *fr1 + *fr2;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
-	if (result.getNumerator() == expected->getNumerator() && result.getDenominator() == expected->getDenominator()) return true;
+	if (result == *expected) return true;
+	else return false;
+}
+bool test34_38(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+{
+	*fr1 += *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
+	if (*fr1 == *expected) return true;
 	else return false;
 }
