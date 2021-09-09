@@ -221,6 +221,16 @@ void tests()
 	printTestResult(test58_60(new NaturalFraction(14, 9), 1, new NaturalFraction(5, 9)), &testsPassed);
 	printTestResult(test58_60(new NaturalFraction(78, 15), 3, new NaturalFraction(33, 15)), &testsPassed);
 	printTestResult(test58_60(new NaturalFraction(1259, 7), 42, new NaturalFraction(965, 7)), &testsPassed);
+
+	/*printf("\n----multiplying a fraction by a fraction (*)----\n\n");
+	printTestResult(test61_63(new NaturalFraction(2,5), new NaturalFraction(14,3), new NaturalFraction(28,15)), &testsPassed);
+	printTestResult(test61_63(new NaturalFraction(29,5), new NaturalFraction(12,11), new NaturalFraction(348,55)), &testsPassed);
+	printTestResult(test61_63(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);*/
+
+	/*printf("\n----multiplying a fraction by a fraction (*=)----\n\n");
+	printTestResult(test64_66(new NaturalFraction(2,5), new NaturalFraction(14,3), new NaturalFraction(28,15)), &testsPassed);
+	printTestResult(test64_66(new NaturalFraction(29,5), new NaturalFraction(12,11), new NaturalFraction(348,55)), &testsPassed);
+	printTestResult(test64_66(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);*/
 }
 
 void printTestResult(bool result, int* counter)
@@ -386,3 +396,18 @@ bool test58_60(NaturalFraction* fr, int term, NaturalFraction* expected)
 	if (*fr == *expected) return true;
 	else return false;
 }
+/*bool test61_63(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+{
+	NaturalFraction result;
+	result = *fr1 * *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (result == *expected) return true;
+	else return false;
+}*/
+/*bool test64_66(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+{
+	*fr1 *= *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (*fr1 == *expected) return true;
+	else return false;
+}*/
