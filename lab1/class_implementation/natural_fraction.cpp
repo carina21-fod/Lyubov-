@@ -197,6 +197,13 @@ void tests()
 	printTestResult(test42_44(new NaturalFraction(1, 3), 2, new NaturalFraction(7, 3)), &testsPassed);
 	printTestResult(test42_44(new NaturalFraction(29, 11), 19, new NaturalFraction(238, 11)), &testsPassed);
 	printTestResult(test42_44(new NaturalFraction(139, 23), 123, new NaturalFraction(2968, 23)), &testsPassed);
+
+	printf("\n----subtracting a fraction to a fraction (-)----\n\n");
+	printTestResult(test45_49(new NaturalFraction(4,7), new NaturalFraction(1,7), new NaturalFraction(3,7)), &testsPassed);
+	printTestResult(test45_49(new NaturalFraction(11,13), new NaturalFraction(2,13), new NaturalFraction(9,13)), &testsPassed);
+	printTestResult(test45_49(new NaturalFraction(16,7), new NaturalFraction(2,9), new NaturalFraction(130,63)), &testsPassed);
+	printTestResult(test45_49(new NaturalFraction(78,17), new NaturalFraction(13,9), new NaturalFraction(481,153)), &testsPassed);
+	printTestResult(test45_49(new NaturalFraction(), new NaturalFraction(), new NaturalFraction()), &testsPassed);
 }
 
 void printTestResult(bool result, int* counter)
@@ -332,3 +339,11 @@ bool test42_44(NaturalFraction* fr, int term, NaturalFraction* expected)
 	if (*fr == *expected) return true;
 	else return false;
 }
+/*bool test45_49(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+{
+	NaturalFraction result;
+	result = *fr1 - *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (result == *expected) return true;
+	else return false;
+}*/
