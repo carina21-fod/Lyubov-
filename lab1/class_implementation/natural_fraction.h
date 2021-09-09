@@ -49,8 +49,8 @@ bool test16_20(NaturalFraction* fr, int expectedNum, int expectedDen);								//
 bool test21_24(NaturalFraction* fr1, NaturalFraction* fr2, bool expected);							// tests 21-24: testing the ability to check if two fractions are equal 
 bool test25_28(NaturalFraction* fr1, NaturalFraction* fr2, bool expected);							// tests 25-28: testing the ability to check if two fractions are not equal
 bool test29_33(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected);				// tests 29-33: testing the ability to add two fractions (+)
-bool test34_38(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected);																					// tests 34-38: testing the ability to add two fractions (+=)
-bool test39_42();																					// tests 39-41: testing the ability to add a number to a fraction (+)
+bool test34_38(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected);				// tests 34-38: testing the ability to add two fractions (+=)
+bool test39_42(NaturalFraction* fr1, int term, NaturalFraction* expected);							// tests 39-41: testing the ability to add a number to a fraction (+)
 bool test42_45();																					// tests 42-44: testing the ability to add a number to a fraction (+=)
 bool test45_49();																					// tests 45-49: testing the ability to subtract a fraction from a fraction (-)
 bool test50_54();																					// tests 50-54: testing the ability to subtract a fraction from a fraction (-=)
