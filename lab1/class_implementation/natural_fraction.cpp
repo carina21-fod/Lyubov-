@@ -232,12 +232,12 @@ void tests()
 	printTestResult(test64_66(new NaturalFraction(29,5), new NaturalFraction(12,11), new NaturalFraction(348,55)), &testsPassed);
 	printTestResult(test64_66(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);*/
 
-	/*printf("\n----multiplying a fracton by a number (*)----\n\n");
+	/*printf("\n----multiplying a fraction by a number (*)----\n\n");
 	printTestResult(test67_69(new NaturalFraction(2,3), 4, new NaturalFraction(8,3)), &testsPassed);
 	printTestResult(test67_69(new NaturalFraction(10,7), 7, new NaturalFraction(10,1)), &testsPassed);
 	printTestResult(test67_69(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);*/
 
-	/*printf("\n----multiplying a fracton by a number (*=)----\n\n");
+	/*printf("\n----multiplying a fraction by a number (*=)----\n\n");
 	printTestResult(test70_72(new NaturalFraction(2,3), 4, new NaturalFraction(8,3)), &testsPassed);
 	printTestResult(test70_72(new NaturalFraction(10,7), 7, new NaturalFraction(10,1)), &testsPassed);
 	printTestResult(test70_72(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);*/
@@ -252,12 +252,12 @@ void tests()
 	printTestResult(test76_78(new NaturalFraction(29,5), new NaturalFraction(1,25), new NaturalFraction(145,1)), &testsPassed);
 	printTestResult(test76_78(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(3060684,96642)), &testsPassed);*/
 
-	printf("\n----dividing a fracton by a number (/)----\n\n");
+	printf("\n----dividing a fraction by a number (/)----\n\n");
 	printTestResult(test79_81(new NaturalFraction(8,3), 4, new NaturalFraction(2,3)), &testsPassed);
 	printTestResult(test79_81(new NaturalFraction(10,7), 10, new NaturalFraction(1,7)), &testsPassed);
 	printTestResult(test79_81(new NaturalFraction(99,11), 9, new NaturalFraction(1,1)), &testsPassed);
 
-	printf("\n----dividing a fracton by a number (/=)----\n\n");
+	printf("\n----dividing a fraction by a number (/=)----\n\n");
 	printTestResult(test82_84(new NaturalFraction(8,3), 4, new NaturalFraction(2,3)), &testsPassed);
 	printTestResult(test82_84(new NaturalFraction(10,7), 10, new NaturalFraction(1,7)), &testsPassed);
 	printTestResult(test82_84(new NaturalFraction(99,11), 9, new NaturalFraction(1,1)), &testsPassed);
