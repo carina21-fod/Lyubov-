@@ -102,7 +102,7 @@ void NaturalFraction::operator-=(int term)
 }
 void NaturalFraction::operator/=(int term)
 {
-	denominator *= term;
+	setDenominator(denominator * term);
 }
 
 bool NaturalFraction::operator==(const NaturalFraction& term)
@@ -241,6 +241,26 @@ void tests()
 	printTestResult(test70_72(new NaturalFraction(2,3), 4, new NaturalFraction(8,3)), &testsPassed);
 	printTestResult(test70_72(new NaturalFraction(10,7), 7, new NaturalFraction(10,1)), &testsPassed);
 	printTestResult(test70_72(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);*/
+
+	/*printf("\n----dividing a fraction by a fraction (/)----\n\n");
+	printTestResult(test73_75(new NaturalFraction(16,7), new NaturalFraction(7,2), new NaturalFraction(32,49)), &testsPassed);
+	printTestResult(test73_75(new NaturalFraction(29,5), new NaturalFraction(1,25), new NaturalFraction(145,1)), &testsPassed);
+	printTestResult(test73_75(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(3060684,96642)), &testsPassed);*/
+
+	/*printf("\n----dividing a fraction by a fraction (/=)----\n\n");
+	printTestResult(test76_78(new NaturalFraction(16,7), new NaturalFraction(7,2), new NaturalFraction(32,49)), &testsPassed);
+	printTestResult(test76_78(new NaturalFraction(29,5), new NaturalFraction(1,25), new NaturalFraction(145,1)), &testsPassed);
+	printTestResult(test76_78(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(3060684,96642)), &testsPassed);*/
+
+	printf("\n----dividing a fracton by a number (/)----\n\n");
+	printTestResult(test79_81(new NaturalFraction(8,3), 4, new NaturalFraction(2,3)), &testsPassed);
+	printTestResult(test79_81(new NaturalFraction(10,7), 10, new NaturalFraction(1,7)), &testsPassed);
+	printTestResult(test79_81(new NaturalFraction(99,11), 9, new NaturalFraction(1,1)), &testsPassed);
+
+	printf("\n----dividing a fracton by a number (/=)----\n\n");
+	printTestResult(test82_84(new NaturalFraction(8,3), 4, new NaturalFraction(2,3)), &testsPassed);
+	printTestResult(test82_84(new NaturalFraction(10,7), 10, new NaturalFraction(1,7)), &testsPassed);
+	printTestResult(test82_84(new NaturalFraction(99,11), 9, new NaturalFraction(1,1)), &testsPassed);
 }
 
 void printTestResult(bool result, int* counter)
@@ -424,7 +444,7 @@ bool test58_60(NaturalFraction* fr, int term, NaturalFraction* expected)
 /*bool test67_69(NaturalFraction* fr1, int term, NaturalFraction* expected)
 {
 	NaturalFraction result;
-	result = *fr1 * term
+	result = *fr1 * term;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
 	if (result == *expected) return true;
 	else return false;
@@ -436,3 +456,33 @@ bool test58_60(NaturalFraction* fr, int term, NaturalFraction* expected)
 	if (*fr1 == *expected) return true;
 	else return false;
 }*/
+/*bool test73_75(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+{
+	NaturalFraction result;
+	result = *fr1 / *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (result == *expected) return true;
+	else return false;
+}*/
+/*bool test76_78(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+{
+	*fr1 /= *fr2;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
+	if (*fr1 == *expected) return true;
+	else return false;
+}*/
+bool test79_81(NaturalFraction* fr1, int term, NaturalFraction* expected)
+{
+	NaturalFraction result;
+	result = *fr1 / term;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
+	if (result == *expected) return true;
+	else return false;
+}
+bool test82_84(NaturalFraction* fr1, int term, NaturalFraction* expected)
+{
+	*fr1 /= term;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
+	if (*fr1 == *expected) return true;
+	else return false;
+}
