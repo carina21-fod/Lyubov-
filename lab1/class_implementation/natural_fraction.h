@@ -24,9 +24,15 @@ public:
 	NaturalFraction operator+(int term);
 	NaturalFraction operator-(int term);
 	NaturalFraction operator/(int term);
-
+	NaturalFraction operator*(const NaturalFraction& m);
+	NaturalFraction operator*(int m);
+	NaturalFraction operator/(const NaturalFraction& m);
+	
+	void operator/=(const NaturalFraction& m);
 	void operator+=(const NaturalFraction& term);
 	void operator+=(int term);
+	void operator*=(const NaturalFraction& m);
+	void operator*=(int m);
 	void operator-=(int term);
 	void operator/=(int term);
 

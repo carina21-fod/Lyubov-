@@ -104,6 +104,47 @@ void NaturalFraction::operator/=(int term)
 {
 	setDenominator(denominator * term);
 }
+NaturalFraction NaturalFraction::operator*(const NaturalFraction& m)
+{
+	NaturalFraction multiplication;
+	multiplication.setDenominator(m.denominator * denominator);
+	multiplication.setNumerator(m.numerator * numerator);
+	return multiplication;
+
+}
+
+void NaturalFraction::operator*=(const NaturalFraction& m)
+{
+	setDenominator(m.denominator * denominator);
+	setNumerator(m.numerator * numerator);
+}
+
+NaturalFraction NaturalFraction::operator*(int m)
+{
+    NaturalFraction multiplication;
+	multiplication.setNumerator(m * numerator);
+	multiplication.setDenominator(denominator);
+	return multiplication;
+
+}
+
+void NaturalFraction::operator*=(int m)
+{
+	setNumerator(m * numerator);
+}
+NaturalFraction NaturalFraction::operator/(const NaturalFraction& m)
+{
+	NaturalFraction division;
+	division.setDenominator(denominator * m.numerator);
+	division.setNumerator(numerator * m.denominator);
+	return division;
+}
+
+void NaturalFraction::operator/=(const NaturalFraction& m)
+{
+	setDenominator(denominator * m.numerator);
+	setNumerator(numerator * m.denominator);
+}
 
 bool NaturalFraction::operator==(const NaturalFraction& term)
 {
