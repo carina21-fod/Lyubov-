@@ -23,17 +23,17 @@ public:
 	NaturalFraction operator+(const NaturalFraction& term);
 	NaturalFraction operator+(int term);
 	NaturalFraction operator-(int term);
-	NaturalFraction operator/(int term);
 	NaturalFraction operator*(const NaturalFraction& m);
 	NaturalFraction operator*(int m);
 	NaturalFraction operator/(const NaturalFraction& m);
+	NaturalFraction operator/(int term);
 	
-	void operator/=(const NaturalFraction& m);
 	void operator+=(const NaturalFraction& term);
 	void operator+=(int term);
+	void operator-=(int term);
 	void operator*=(const NaturalFraction& m);
 	void operator*=(int m);
-	void operator-=(int term);
+	void operator/=(const NaturalFraction& m);
 	void operator/=(int term);
 
 	bool operator==(const NaturalFraction& term);
@@ -70,3 +70,7 @@ bool test73_75(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expe
 bool test76_78(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected);				// tests 76-78: testing the ability to divide a fraction by a fraction (/=)
 bool test79_81(NaturalFraction* fr, int term, NaturalFraction* expected);							// tests 79-81: testing the ability to divide a fraction by a number (/)
 bool test82_84(NaturalFraction* fr, int term, NaturalFraction* expected);							// tests 82-84: testing the ability to divide a fraction by a number (/=)
+bool test85_86(NaturalFraction* fr, NaturalFraction* expected);										// tests 85-86: testing the preincrement operator (++fr)
+bool test87_88(NaturalFraction* fr, NaturalFraction* expected);										// tests 87-88: testing the postincrement operator (fr++)
+bool test89_90(NaturalFraction* fr, NaturalFraction* expected);										// tests 89-90: testing the predecrement operator (--fr)
+bool test91_92(NaturalFraction* fr, NaturalFraction* expected);										// tests 91-92: testing the postdecrement operator (fr--)

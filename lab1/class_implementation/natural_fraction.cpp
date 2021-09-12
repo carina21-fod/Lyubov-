@@ -132,6 +132,7 @@ void NaturalFraction::operator*=(int m)
 {
 	setNumerator(m * numerator);
 }
+
 NaturalFraction NaturalFraction::operator/(const NaturalFraction& m)
 {
 	NaturalFraction division;
@@ -222,12 +223,12 @@ void tests()
 	printTestResult(test29_33(new NaturalFraction(29,100), new NaturalFraction(90,17), new NaturalFraction(9493,1700)), &testsPassed);
 	printTestResult(test29_33(new NaturalFraction(37821,1274), new NaturalFraction(6437,5178), new NaturalFraction(7287067,235599)), &testsPassed);
 
-	/*printf("\n----adding two fractions (+=)----\n\n");
+	printf("\n----adding two fractions (+=)----\n\n");
 	printTestResult(test34_38(new NaturalFraction(1, 3), new NaturalFraction(1, 3), new NaturalFraction(2, 3)), &testsPassed);
 	printTestResult(test34_38(new NaturalFraction(5, 8), new NaturalFraction(4, 2), new NaturalFraction(21, 8)), &testsPassed);
 	printTestResult(test34_38(new NaturalFraction(12, 11), new NaturalFraction(8, 31), new NaturalFraction(460, 341)), &testsPassed);
 	printTestResult(test34_38(new NaturalFraction(29, 100), new NaturalFraction(90, 17), new NaturalFraction(9493, 1700)), &testsPassed);
-	printTestResult(test34_38(new NaturalFraction(37821, 1274), new NaturalFraction(6437, 5178), new NaturalFraction(7287067, 235599)), &testsPassed);*/
+	printTestResult(test34_38(new NaturalFraction(37821, 1274), new NaturalFraction(6437, 5178), new NaturalFraction(7287067, 235599)), &testsPassed);
 
 	printf("\n----adding a number to a fraction (+)----\n\n");
 	printTestResult(test39_41(new NaturalFraction(1,3), 2, new NaturalFraction(7,3)), &testsPassed);
@@ -263,35 +264,35 @@ void tests()
 	printTestResult(test58_60(new NaturalFraction(78, 15), 3, new NaturalFraction(33, 15)), &testsPassed);
 	printTestResult(test58_60(new NaturalFraction(1259, 7), 42, new NaturalFraction(965, 7)), &testsPassed);
 
-	/*printf("\n----multiplying a fraction by a fraction (*)----\n\n");
+	printf("\n----multiplying a fraction by a fraction (*)----\n\n");
 	printTestResult(test61_63(new NaturalFraction(2,5), new NaturalFraction(14,3), new NaturalFraction(28,15)), &testsPassed);
 	printTestResult(test61_63(new NaturalFraction(29,5), new NaturalFraction(12,11), new NaturalFraction(348,55)), &testsPassed);
-	printTestResult(test61_63(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);*/
+	printTestResult(test61_63(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);
 
-	/*printf("\n----multiplying a fraction by a fraction (*=)----\n\n");
+	printf("\n----multiplying a fraction by a fraction (*=)----\n\n");
 	printTestResult(test64_66(new NaturalFraction(2,5), new NaturalFraction(14,3), new NaturalFraction(28,15)), &testsPassed);
 	printTestResult(test64_66(new NaturalFraction(29,5), new NaturalFraction(12,11), new NaturalFraction(348,55)), &testsPassed);
-	printTestResult(test64_66(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);*/
+	printTestResult(test64_66(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(303732,973854)), &testsPassed);
 
-	/*printf("\n----multiplying a fraction by a number (*)----\n\n");
+	printf("\n----multiplying a fraction by a number (*)----\n\n");
 	printTestResult(test67_69(new NaturalFraction(2,3), 4, new NaturalFraction(8,3)), &testsPassed);
 	printTestResult(test67_69(new NaturalFraction(10,7), 7, new NaturalFraction(10,1)), &testsPassed);
-	printTestResult(test67_69(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);*/
+	printTestResult(test67_69(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);
 
-	/*printf("\n----multiplying a fraction by a number (*=)----\n\n");
+	printf("\n----multiplying a fraction by a number (*=)----\n\n");
 	printTestResult(test70_72(new NaturalFraction(2,3), 4, new NaturalFraction(8,3)), &testsPassed);
 	printTestResult(test70_72(new NaturalFraction(10,7), 7, new NaturalFraction(10,1)), &testsPassed);
-	printTestResult(test70_72(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);*/
+	printTestResult(test70_72(new NaturalFraction(265,11), 22, new NaturalFraction(530,1)), &testsPassed);
 
-	/*printf("\n----dividing a fraction by a fraction (/)----\n\n");
+	printf("\n----dividing a fraction by a fraction (/)----\n\n");
 	printTestResult(test73_75(new NaturalFraction(16,7), new NaturalFraction(7,2), new NaturalFraction(32,49)), &testsPassed);
 	printTestResult(test73_75(new NaturalFraction(29,5), new NaturalFraction(1,25), new NaturalFraction(145,1)), &testsPassed);
-	printTestResult(test73_75(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(3060684,96642)), &testsPassed);*/
+	printTestResult(test73_75(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(3060684,96642)), &testsPassed);
 
-	/*printf("\n----dividing a fraction by a fraction (/=)----\n\n");
+	printf("\n----dividing a fraction by a fraction (/=)----\n\n");
 	printTestResult(test76_78(new NaturalFraction(16,7), new NaturalFraction(7,2), new NaturalFraction(32,49)), &testsPassed);
 	printTestResult(test76_78(new NaturalFraction(29,5), new NaturalFraction(1,25), new NaturalFraction(145,1)), &testsPassed);
-	printTestResult(test76_78(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(3060684,96642)), &testsPassed);*/
+	printTestResult(test76_78(new NaturalFraction(1298,413), new NaturalFraction(234,2358), new NaturalFraction(3060684,96642)), &testsPassed);
 
 	printf("\n----dividing a fraction by a number (/)----\n\n");
 	printTestResult(test79_81(new NaturalFraction(8,3), 4, new NaturalFraction(2,3)), &testsPassed);
@@ -302,6 +303,22 @@ void tests()
 	printTestResult(test82_84(new NaturalFraction(8,3), 4, new NaturalFraction(2,3)), &testsPassed);
 	printTestResult(test82_84(new NaturalFraction(10,7), 10, new NaturalFraction(1,7)), &testsPassed);
 	printTestResult(test82_84(new NaturalFraction(99,11), 9, new NaturalFraction(1,1)), &testsPassed);
+
+	/*printf("\n----preincrement operator (++fr)----\n\n");
+	printTestResult(test85_86(new NaturalFraction(5,8), new NaturalFraction(13,8)), &testsPassed);
+	printTestResult(test85_86(new NaturalFraction(113,200), new NaturalFraction(313,200)), &testsPassed);*/
+
+	/*printf("\n----postincrement operator (fr++)----\n\n");
+	printTestResult(test87_88(new NaturalFraction(5,8), new NaturalFraction(13,8)), &testsPassed);
+	printTestResult(test87_88(new NaturalFraction(113,200), new NaturalFraction(313,200)), &testsPassed);*/
+
+	/*printf("\n----predecrement operator (--fr)----\n\n");
+	printTestResult(test89_90(new NaturalFraction(79,13), new NaturalFraction(66,13)), &testsPassed);
+	printTestResult(test89_90(new NaturalFraction(201,31), new NaturalFraction(170,31)), &testsPassed);*/
+
+	/*printf("\n----postdecrement operator (fr--)----\n\n");
+	printTestResult(test91_92(new NaturalFraction(79, 13), new NaturalFraction(66, 13)), &testsPassed);
+	printTestResult(test91_92(new NaturalFraction(201, 31), new NaturalFraction(170, 31)), &testsPassed);*/
 }
 
 void printTestResult(bool result, int* counter)
@@ -467,51 +484,51 @@ bool test58_60(NaturalFraction* fr, int term, NaturalFraction* expected)
 	if (*fr == *expected) return true;
 	else return false;
 }
-/*bool test61_63(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+bool test61_63(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
 {
 	NaturalFraction result;
 	result = *fr1 * *fr2;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
 	if (result == *expected) return true;
 	else return false;
-}*/
-/*bool test64_66(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+}
+bool test64_66(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
 {
 	*fr1 *= *fr2;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
 	if (*fr1 == *expected) return true;
 	else return false;
-}*/
-/*bool test67_69(NaturalFraction* fr1, int term, NaturalFraction* expected)
+}
+bool test67_69(NaturalFraction* fr1, int term, NaturalFraction* expected)
 {
 	NaturalFraction result;
 	result = *fr1 * term;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
 	if (result == *expected) return true;
 	else return false;
-}*/
-/*bool test70_72(NaturalFraction* fr1, int term, NaturalFraction* expected)
+}
+bool test70_72(NaturalFraction* fr1, int term, NaturalFraction* expected)
 {
 	*fr1 *= term;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
 	if (*fr1 == *expected) return true;
 	else return false;
-}*/
-/*bool test73_75(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+}
+bool test73_75(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
 {
 	NaturalFraction result;
 	result = *fr1 / *fr2;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), result.getNumerator(), result.getDenominator());
 	if (result == *expected) return true;
 	else return false;
-}*/
-/*bool test76_78(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
+}
+bool test76_78(NaturalFraction* fr1, NaturalFraction* fr2, NaturalFraction* expected)
 {
 	*fr1 /= *fr2;
 	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr1->getNumerator(), fr1->getDenominator());
 	if (*fr1 == *expected) return true;
 	else return false;
-}*/
+}
 bool test79_81(NaturalFraction* fr1, int term, NaturalFraction* expected)
 {
 	NaturalFraction result;
@@ -527,3 +544,27 @@ bool test82_84(NaturalFraction* fr1, int term, NaturalFraction* expected)
 	if (*fr1 == *expected) return true;
 	else return false;
 }
+/*bool test85_86(NaturalFraction* fr, NaturalFraction* expected)
+{
+	++(*fr);
+	if (*fr == *expected) return true;
+	else return false;
+}*/
+/*bool test87_88(NaturalFraction* fr, NaturalFraction* expected)
+{
+	(*fr)++;
+	if (*fr == *expected) return true;
+	else return false;
+}*/
+/*bool test89_90(NaturalFraction* fr, NaturalFraction* expected)
+{
+	--(*fr);
+	if (*fr == *expected) return true;
+	else return false;
+}*/
+/*bool test91_92(NaturalFraction* fr, NaturalFraction* expected)
+{
+	(*fr)--;
+	if (*fr == *expected) return true;
+	else return false;
+}*/
