@@ -5,135 +5,72 @@
 
 using namespace std;
 
-NaturalFraction::NaturalFraction()
+NaturalFraction::NaturalFraction() // default constructor
 {
-	setNumerator(1);
+	setNumerator(1); // a 1/1 fraction will be created if no arguments specified
 	setDenominator(1);
 }
-NaturalFraction::NaturalFraction(int num, int den)
+NaturalFraction::NaturalFraction(int num, int den) // a constructor that takes the numerator and the denominator as arguments
 {
 	setNumerator(num);
 	setDenominator(den);
 }
-NaturalFraction::NaturalFraction(NaturalFraction& currFraction)
+NaturalFraction::NaturalFraction(NaturalFraction& currFraction) // copy constructor
 {
 	numerator = currFraction.numerator;
 	denominator = currFraction.denominator;
-}
+} 
 
-int NaturalFraction::getNumerator() { return numerator; }
-int NaturalFraction::getDenominator() { return denominator; }
-void NaturalFraction::setNumerator(int newNum) 
+int NaturalFraction::getNumerator() { return numerator; } // returns the numerator of a fraction
+int NaturalFraction::getDenominator() { return denominator; } // returns the denominator of a fraction
+void NaturalFraction::setNumerator(int newNum) //  sets the numerator of a fraction
 { 
 	numerator = newNum; 
 	numeratorSet = true;
 	reduce();
-}
-void NaturalFraction::setDenominator(int newDen) 
+} 
+void NaturalFraction::setDenominator(int newDen) // sets the denominator of a fraction
 { 
 	denominator = newDen; 
 	denominatorSet = true;
 	reduce();
-}
-int NaturalFraction::getIntegerPart() { return numerator / denominator; }
-void NaturalFraction::reduce() 
+} 
+int NaturalFraction::getIntegerPart() { return numerator / denominator; } // returns the integer part of a fraction
+void NaturalFraction::reduce() // reduces the fraction
 { 
-	if (!numeratorSet || !denominatorSet) return;
-	int less = (numerator < denominator) ? numerator : denominator;
-	for (int currdivisor = 2; currdivisor <= less; currdivisor++)
+	if (!numeratorSet || !denominatorSet) return; // there's no need for reduction if the fraction isn't assigned all values yet
+	int less = (numerator < denominator) ? numerator : denominator; // the cycle that will reduce the numerator and the denominator will only go as far as the least of the numbers that make up the fraction
+	for (int currdivisor = 2; currdivisor <= less; currdivisor++) // there's no need to check if 1 is a common divisor, because it always will be, and reduction by 1 doesn't change the fraction
 	{
 		if (numerator % currdivisor == 0 && denominator % currdivisor == 0)
 		{
-			numerator /= currdivisor;
+			numerator /= currdivisor; // if the numerator and the denominator are both divisible by some number, they are both divided by this number
 			denominator /= currdivisor;
-			currdivisor--;
+			currdivisor--; // we need to return one number back in order to account for possible bigger than one powers of primes; for example, 8/16 should be reduced to 1/2, not 4/8
 		}
 	}
-}
-double NaturalFraction::toDouble()
+} 
+double NaturalFraction::toDouble() // converts the fraction to double
 {
 	double numeratorDouble = numerator * 1.0;
 	return numeratorDouble / denominator;
 }
 
-NaturalFraction NaturalFraction::operator+(const NaturalFraction& term)
+NaturalFraction NaturalFraction::operator+(const NaturalFraction& term) // adds two fractions, returns their sum
 {
 	NaturalFraction result;
 	result.setDenominator(term.denominator * denominator);
 	result.setNumerator(numerator * term.denominator + term.numerator * denominator);
 	return result;
 }
-NaturalFraction NaturalFraction::operator+(int term)
-{
-	NaturalFraction result;
-	result.setDenominator(denominator);
-	result.setNumerator(numerator + term * denominator);
-	return result;
-}
-NaturalFraction NaturalFraction::operator-(int term)
-{
-	NaturalFraction result;
-	result.setDenominator(denominator);
-	result.setNumerator(numerator - term * denominator);
-	return result;
-}
-NaturalFraction NaturalFraction::operator/(int term)
-{
-	NaturalFraction result;
-	result.setNumerator(numerator);
-	result.setDenominator(denominator * term);
-	return result;
-}
-
-void NaturalFraction::operator+=(const NaturalFraction& term)
-{
-	int tempdenominator = denominator;
-	denominator = term.denominator * denominator;
-	numerator = numerator * term.denominator + term.numerator * tempdenominator;
-	reduce();
-}
-void NaturalFraction::operator+=(int term)
-{
-	setNumerator(numerator + term * denominator);
-}
-void NaturalFraction::operator-=(int term)
-{
-	setNumerator(numerator - term * denominator);
-}
-void NaturalFraction::operator/=(int term)
-{
-	setDenominator(denominator * term);
-}
-NaturalFraction NaturalFraction::operator*(const NaturalFraction& m)
+NaturalFraction NaturalFraction::operator*(const NaturalFraction& m) // multiplies two fractions, returns their product
 {
 	NaturalFraction multiplication;
 	multiplication.setDenominator(m.denominator * denominator);
 	multiplication.setNumerator(m.numerator * numerator);
 	return multiplication;
-
 }
-
-void NaturalFraction::operator*=(const NaturalFraction& m)
-{
-	setDenominator(m.denominator * denominator);
-	setNumerator(m.numerator * numerator);
-}
-
-NaturalFraction NaturalFraction::operator*(int m)
-{
-    NaturalFraction multiplication;
-	multiplication.setNumerator(m * numerator);
-	multiplication.setDenominator(denominator);
-	return multiplication;
-
-}
-
-void NaturalFraction::operator*=(int m)
-{
-	setNumerator(m * numerator);
-}
-
-NaturalFraction NaturalFraction::operator/(const NaturalFraction& m)
+NaturalFraction NaturalFraction::operator/(const NaturalFraction& m) // divides a fraction by a fraction, returns their quotient
 {
 	NaturalFraction division;
 	division.setDenominator(denominator * m.numerator);
@@ -141,18 +78,76 @@ NaturalFraction NaturalFraction::operator/(const NaturalFraction& m)
 	return division;
 }
 
-void NaturalFraction::operator/=(const NaturalFraction& m)
+NaturalFraction NaturalFraction::operator+(int term) // adds a number to a fraction, returns their sum
+{
+	NaturalFraction result;
+	result.setDenominator(denominator);
+	result.setNumerator(numerator + term * denominator);
+	return result;
+}
+NaturalFraction NaturalFraction::operator-(int term) // subtracts a number from a fraction, returns their difference
+{
+	NaturalFraction result;
+	result.setDenominator(denominator);
+	result.setNumerator(numerator - term * denominator);
+	return result;
+}
+NaturalFraction NaturalFraction::operator*(int m) // multiplies a fraction by a number, returns their product
+{
+	NaturalFraction multiplication;
+	multiplication.setNumerator(m * numerator);
+	multiplication.setDenominator(denominator);
+	return multiplication;
+}
+NaturalFraction NaturalFraction::operator/(int term) // divides a fraction by a number, returns their quotient
+{
+	NaturalFraction result;
+	result.setNumerator(numerator);
+	result.setDenominator(denominator * term); // we multiply the denominator rather than divide the numerator in order to account for cases when the numerator isn't divisible by the number we fed into the function, for example, 1/3 : 3 should be 1/9, not (1/3)/3
+	return result;
+}
+
+void NaturalFraction::operator+=(const NaturalFraction& term) // adds two fractions with assignment
+{
+	int tempdenominator = denominator;
+	denominator = term.denominator * denominator;
+	numerator = numerator * term.denominator + term.numerator * tempdenominator;
+	reduce();
+} 
+void NaturalFraction::operator*=(const NaturalFraction& m) // multiplies two fractions with assignment
+{
+	setDenominator(m.denominator * denominator);
+	setNumerator(m.numerator * numerator);
+}
+void NaturalFraction::operator/=(const NaturalFraction& m) // divides a fraction by a fraction with assignment
 {
 	setDenominator(denominator * m.numerator);
 	setNumerator(numerator * m.denominator);
 }
 
-bool NaturalFraction::operator==(const NaturalFraction& term)
+void NaturalFraction::operator+=(int term) // adds a number to a fraction with assignment
+{
+	setNumerator(numerator + term * denominator);
+} 
+void NaturalFraction::operator-=(int term) // subtracts a number from a fraction with assignment
+{
+	setNumerator(numerator - term * denominator);
+}
+void NaturalFraction::operator/=(int term) // divides a fraction by a number with assignment
+{
+	setDenominator(denominator * term);
+}
+void NaturalFraction::operator*=(int m)
+{
+	setNumerator(m * numerator);
+}
+
+bool NaturalFraction::operator==(const NaturalFraction& term) // checks if two fractions are equal
 {
 	if (numerator == term.numerator && denominator == term.denominator) return true;
 	else return false;
 }
-bool NaturalFraction::operator!=(const NaturalFraction& term)
+bool NaturalFraction::operator!=(const NaturalFraction& term) // checks if two fractions are not equal
 {
 	if (numerator != term.numerator || denominator != term.denominator) return true;
 	else return false;
