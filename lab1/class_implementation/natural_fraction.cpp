@@ -314,6 +314,40 @@ void tests()
 	/*printf("\n----postdecrement operator (fr--)----\n\n");
 	printTestResult(test91_92(new NaturalFraction(79, 13), new NaturalFraction(66, 13)), &testsPassed);
 	printTestResult(test91_92(new NaturalFraction(201, 31), new NaturalFraction(170, 31)), &testsPassed);*/
+
+	/*printf("\n----comparing two fractions (>)----\n\n");
+	printTestResult(test93_94(new NaturalFraction(2,3), new NaturalFraction(1,3), true), &testsPassed);
+	printTestResult(test93_94(new NaturalFraction(2,3), new NaturalFraction(2,3), false), &testsPassed);*/
+
+	/*printf("\n----comparing two fractions (>=)----\n\n");
+	printTestResult(test95_96(new NaturalFraction(2,3), new NaturalFraction(1,3), true), &testsPassed);
+	printTestResult(test95_96(new NaturalFraction(2,3), new NaturalFraction(2,3), true), &testsPassed);*/
+
+	/*printf("\n----comparing two fractions (<)----\n\n");
+	printTestResult(test97_98(new NaturalFraction(5,8), new NaturalFraction(11,8), true), &testsPassed);
+	printTestResult(test97_98(new NaturalFraction(5,8), new NaturalFraction(3,8), false), &testsPassed);*/
+
+	/*printf("\n----comparing two fractions (<=)----\n\n");
+	printTestResult(test99_100(new NaturalFraction(5,8), new NaturalFraction(5,8), true), &testsPassed);
+	printTestResult(test99_100(new NaturalFraction(5,8), new NaturalFraction(3,8), false), &testsPassed);*/
+
+	/*printf("\n----comparing a fraction with a number (>)----\n\n");
+	printTestResult(test101_102(new NaturalFraction(2,3), 0, true), &testsPassed);
+	printTestResult(test101_102(new NaturalFraction(2,3), 1, false), &testsPassed);*/
+
+	/*printf("\n----comparing a fraction with a number (>=)----\n\n");
+	printTestResult(test103_104(new NaturalFraction(6,3), 1, true), &testsPassed);
+	printTestResult(test103_104(new NaturalFraction(6,3), 2, true), &testsPassed);*/
+
+	/*printf("\n----comparing a fraction with a number (<)----\n\n");
+	printTestResult(test105_106(new NaturalFraction(5,8), 1, true), &testsPassed);
+	printTestResult(test105_106(new NaturalFraction(5,8), 2, true), &testsPassed);*/
+
+	/*printf("\n----comparing a fraction with a number (<=)----\n\n");
+	printTestResult(test107_108(new NaturalFraction(21,7), 2, false), &testsPassed);
+	printTestResult(test107_108(new NaturalFraction(21,7), 3, true), &testsPassed);*/
+
+	printf("\nTests passed: %d/108\n\n", testsPassed);
 }
 
 void printTestResult(bool result, int* counter)
@@ -561,5 +595,221 @@ bool test82_84(NaturalFraction* fr1, int term, NaturalFraction* expected)
 {
 	(*fr)--;
 	if (*fr == *expected) return true;
+	else return false;
+}*/
+/*bool test93_94(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr1 > *fr2)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr1 > *fr2) == expected) return true;
+	else return false;
+}*/
+/*bool test95_96(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr1 >= *fr2)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr1 >= *fr2) == expected) return true;
+	else return false;
+}*/
+/*bool test97_98(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr1 < *fr2)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr1 < *fr2) == expected) return true;
+	else return false;
+}*/
+/*bool test99_100(NaturalFraction* fr1, NaturalFraction* fr2, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr1 <= *fr2)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr1 <= *fr2) == expected) return true;
+	else return false;
+}*/
+/*bool test101_102(NaturalFraction* fr, int number, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr > number)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr > number) == expected) return true;
+	else return false;
+}*/
+/*bool test103_104(NaturalFraction* fr, int number, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr >= number)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr >= number) == expected) return true;
+	else return false;
+}*/
+/*bool test105_106(NaturalFraction* fr, int number, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr < number)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr < number) == expected) return true;
+	else return false;
+}*/
+/*bool test107_108(NaturalFraction* fr, int number, bool expected)
+{
+	char* expect, * got;
+	if (expected)
+	{
+		expect = new char[5];
+		strcpy(expect, "true");
+	}
+	else
+	{
+		expect = new char[6];
+		strcpy(expect, "false");
+	}
+	if (*fr <= number)
+	{
+		got = new char[5];
+		strcpy(got, "true");
+	}
+	else
+	{
+		got = new char[6];
+		strcpy(got, "false");
+	}
+	printf("Expected: %s, Got: %s; ", expect, got);
+	if ((*fr <= number) == expected) return true;
 	else return false;
 }*/
