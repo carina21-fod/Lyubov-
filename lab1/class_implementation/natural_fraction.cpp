@@ -660,24 +660,28 @@ bool test82_84(NaturalFraction* fr1, int term, NaturalFraction* expected)
 bool test85_86(NaturalFraction* fr, NaturalFraction* expected)
 {
 	++(*fr);
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr->getNumerator(), fr->getDenominator());
 	if (*fr == *expected) return true;
 	else return false;
 }
 bool test87_88(NaturalFraction* fr, NaturalFraction* expected)
 {
 	(*fr)++;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr->getNumerator(), fr->getDenominator());
 	if (*fr == *expected) return true;
 	else return false;
 }
 bool test89_90(NaturalFraction* fr, NaturalFraction* expected)
 {
 	--(*fr);
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr->getNumerator(), fr->getDenominator());
 	if (*fr == *expected) return true;
 	else return false;
 }
 bool test91_92(NaturalFraction* fr, NaturalFraction* expected)
 {
 	(*fr)--;
+	printf("Expected: %d/%d, Got: %d/%d; ", expected->getNumerator(), expected->getDenominator(), fr->getNumerator(), fr->getDenominator());
 	if (*fr == *expected) return true;
 	else return false;
 }
